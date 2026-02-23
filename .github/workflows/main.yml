@@ -1,0 +1,18 @@
+name: Build Java Project
+on:
+  push:
+    branches:
+      - master 
+jobs:
+  buildJob: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Install java 17 and maven
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build java code
+        run: mvn clean package
