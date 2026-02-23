@@ -1,3 +1,4 @@
+// scripted pipeline
 node(){
     def sonarScanner = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 	def repoName = "https://github.com/anujdevopslearn/SonarQubeCoverageJava"
